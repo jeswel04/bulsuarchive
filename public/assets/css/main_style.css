@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*---ROOT VARIABLES---*/
+:root{
+  --color-primary: #9F1D1F;
+  --color-danger: #9F1D1F;
+  --color-success: #0D8549;
+  --color-warning: #FFB932;
+  --color-white: #ffffff;
+  --color-black:#000000;
+  --color-info-dark: #696969;
+  --color-info-light: #7380ec;
+  --color-dark: #363949;    
+  --color-light: rgba(159, 29, 31, 0.18) ;
+  --color-primary-variant: #EE2C2F;
+  --color-dark-variant: #000000;
+  --color-background: #f6f6f9;    
+  --color-bgdarkwhite: #ffffff;
+  --color-bglightblack:#000000;
+  --color-bgdarkgray: #696969;
+  --color-lightgray: #E7E7E7;
+
+  --card-border-radius: 1rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.22rem;
+
+  --box-shadow: 0 0.2rem 3rem var(--color-light);
+}
+
+.dark-theme-variables {
+  --color-bglightblack:#ffffff;
+  --color-bgdark-white: #ffffff;
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-variant: #a3bdcc;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+html{
+  height: 14px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.material-symbols-sharp {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}

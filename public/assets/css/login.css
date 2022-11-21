@@ -1,0 +1,522 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/bulsu_gate.jpg') rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    overflow: scroll;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+html{
+    background: url('../images/bulsu_gate.jpg') rgba(0, 0, 0, 0.5);
+}
+.logo{
+    position: absolute;
+    margin-top: -36rem;
+    transition: margin-top 0.50s ease;
+}
+
+.logo.active {
+    position: absolute;
+    margin-top: -46rem;
+    transition: margin-top 0.50s ease;
+}
+
+.logo img{
+    width: 23rem;
+    -webkit-filter: drop-shadow(5px 5px 5px rgb(147, 147, 147));
+    filter: drop-shadow(5px 5px 5px rgb(147, 147, 147));
+}
+
+.container1{
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: rgba(195, 194, 194, 0.94);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    overflow: hidden;
+    margin: 0 20px;
+    padding: 2rem 2rem;
+    justify-content:center;
+    align-items:center;
+    top: 30%;
+    left: 40%;
+    
+}
+
+.container1 span{
+    font-size: 6rem;
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+p{
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.done{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: var(--color-primary);
+    cursor: pointer;
+    width: 100%;
+    height: 3rem;
+    margin-top: 1rem;
+}
+
+#overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.container{
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.20);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    overflow: hidden;
+    margin: 0 20px;
+}
+
+.container .forms{
+    display: flex;
+    align-items: center;
+    height: 440px;
+    width: 200%;
+    transition: height 0.40s ease;
+}
+
+.container .form{
+    width: 50%;
+    padding: 30px;
+    background-color: transparent;
+    transition: margin-left 0.30s ease;
+}
+
+/* WHEN ACTIVE OR SIGNUP NOW IS CLICKED */
+
+.container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.50s ease, opacity 0.40s ease;
+}
+
+.container .signup{
+    opacity: 0;
+    transition: opacity 0.30s ease;
+}
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.30s ease;
+}
+
+.container.active .forms{
+    height: 640px;
+}
+
+.container.active {
+    max-width: 800px;
+}
+
+.container .form .title{
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.form .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 30px;
+    background-color: var(--color-primary);
+    border-radius: 25px;
+}
+
+.form .input-field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-field input{
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: var(--border-radius-1);
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color: var(--color-primary);
+}
+
+input[type=text]{
+    padding-left: 55px;
+    color: #000;
+    font-weight: 500;
+}
+
+input[type=password]{
+    padding-left: 55px;
+    font-weight: 500;
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: var(--color-primary);
+}
+
+.login h1{
+    margin-bottom: 40px;
+    color: var(--color-white);
+}
+
+.input-field i.icon{
+    left: 5%;
+}
+
+.input-field small{
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    font-weight: 500;
+}
+
+.input-field i.showHidePw{
+    right: 2%;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-text .checkbox-content .text{
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.checkbox-content input{
+    margin: 0 8px 1px 4px;
+    accent-color: var(--color-primary);
+}
+
+.form .text{
+    color: white;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.form .text-login{
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.form a.text{
+    color: var(--color-warning);
+    text-decoration: none;
+    font-weight: 600;
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+button{
+    margin-top: 35px;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: var(--color-primary);
+    cursor: pointer;
+}
+
+
+.form .login-signup{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form .login-signup a{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ----------- FOR SIGN-UP --------------- */
+.signup h1{
+    margin-bottom: 20px;
+    color: var(--color-white);
+}
+
+.signup form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+    grid-gap: 0.8em;
+}
+
+.signup .form .title {
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.signup .input-field{
+    position: relative;
+    height: 50px;
+    width: 350px;
+    margin-top: 20px;        
+}
+
+.signup .input-field input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+    transition: all 0.1s ease;
+}
+
+select{
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: var(--border-radius-1);
+    transition: all 0.2s ease;
+}
+
+.validation-error {
+    border-bottom: 4px solid var(--color-primary);
+}
+
+#display-image {
+    position: relative;
+    margin-top: 40px;    
+    margin-right: 10px;
+    float: right;
+    font-size: 12px;    
+    background-color: var(--color-warning);    
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 4px;
+}
+
+#error{
+    position: relative;
+    margin-top: 42px;
+    float: right;
+    margin-right: 10px;
+    font-size: 12px;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 4px;
+}
+#pic_error{
+    position: relative;
+    margin-top: -10px;
+    float: right;
+    margin-right: 20px;
+    font-size: 12px;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 4px;
+}
+#file{
+    position: relative;
+    margin-top: 40px;    
+    margin-right: 10px;
+    float: right;
+    font-size: 12px;    
+    background-color: var(--color-warning);    
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 4px;
+}
+.signup .input-field input[type=file] {
+    display: none;
+    visibility: none;
+}
+
+.signup .input-field label i {
+    font-size: 30px;
+    margin-left: 15px;
+    color: rgb(55, 55, 55);
+    
+}
+
+.signup .input-field input::-webkit-input-placeholder {
+    color: rgb(55, 55, 55);
+}
+
+.signup .input-field .label {
+    position: absolute;
+    margin-left: 54px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: rgb(55, 55, 55);
+    font-weight: 500;
+}
+
+.signup .input-field .border_error{
+    border-bottom-color: var(--color-primary);
+    border-width: 4px;
+}
+
+
+.signup .checkbox-text{
+    margin-top: 20px;
+}
+
+.signup .checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+
+.signup .checkbox-content input{
+    margin: 0 8px 1px 4px;
+    accent-color: var(--color-primary);
+}
+
+.signup .checkbox-content .text a{
+    margin-bottom: -1px;
+    color: var(--color-warning);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.signup input[type=text]{
+    padding-left: 25px;
+    color: #000;
+    font-weight: 500;
+}
+
+.signup input[type=password]{
+    padding-left: 25px;
+    font-weight: 500;
+}
+
+.signup .text{
+    color: #fff;
+    font-size: 14px;
+}
+
+.signup a.text{
+    color: var(--color-warning);
+    text-decoration: none;
+}
+
+.signup a:hover{
+    text-decoration: underline;
+}
+
+.signup .button{
+    margin-top: 20px;    
+}
+
+.signup .button input{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.signup .login-signup{
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* FOR RESPONSIVE */
+
+@media screen and (max-width: 830px) {
+    .container.active {
+        max-width: 410px;        
+    }
+    .container.active .forms{        
+        overflow-y: scroll;
+    }
+    .container.active .signup .title {
+        margin-top: 240px;
+    }
+    }
